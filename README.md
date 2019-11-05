@@ -7,25 +7,24 @@
 
 ### SEGUNDO PROTOTIPO
 	
-	Inplementacion de Menu al juego, menu incluye:
+Inplementacion de Menu al juego, menu incluye:
 	
-	- BOTON NUEVO JUEVO
-	- BOTON PAUSAR JUEGO
-	- REINICIAR JUEGO
-	- BANER DE TIEMPO
-	- BANER DE MOVIMIENTOS
-	- DIALOGO CON MENSAJE "FELICIDADES HAS RESUELTO EL PUZZLE EN",
-	   "MOVIMIENTOS Y","SEGUNDOS"    
+- BOTON NUEVO JUEVO
+- BOTON PAUSAR JUEGO
+- REINICIAR JUEGO
+- BANER DE TIEMPO
+- BANER DE MOVIMIENTOS
+- DIALOGO CON MENSAJE "FELICIDADES HAS RESUELTO EL PUZZLE EN", "MOVIMIENTOS Y","SEGUNDOS"    
 
 
 
 ### TERCER PROTOTIPO
 	
-	Inplementacion de Niveles:
+Inplementacion de Niveles:
 
-	- 2 x 2
-	- 3 x 3
-	- 4 x 4
+- 2 x 2
+- 3 x 3
+- 4 x 4
 
-	**eso se encuentra en el siguiente repositorio del compañero Christian...**
-	[https://github.com/Chrisqp/puzzle](https://github.com/Chrisqp/puzzle)
+	**eso se encuentra en el siguiente repositorio del compañero Christian**
+	[www.github.com/Chrisqp/puzzle](https://www.github.com/Chrisqp/puzzle)
