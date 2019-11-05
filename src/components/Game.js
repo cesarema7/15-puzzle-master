@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import { getTileCoords, distanceBetween, invert } from '../lib/utils';
 import Grid from './Grid';
+import Menu from './Menu';
 import {
   GAME_IDLE,
   GAME_OVER,
   GAME_STARTED,
   GAME_PAUSED,
 } from '../lib/game-status';
+import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
+import Snackbar from 'material-ui/Snackbar';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -101,7 +104,7 @@ class Game extends Component {
 
     if (correctedTiles.length === (this.props.gridSize) ** 2) {
       clearInterval(this.timerId);
-      return true;
+      return true;      
     } else {
       return false;
     }
@@ -206,12 +209,41 @@ class Game extends Component {
     return (
       <div className={className}>
         
+        <Menu
+        seconds={this.state.seconds}
+        moves={this.state.moves}
+        onResetClick={onResetClick}
+        onPauseClick={this.onPauseClick}
+        onNewClick={onNewClick}
+        gameState={this.state.gameState}
+      />
+        
         <Grid
           gridSize={gridSize}
           tileSize={tileSize}
           tiles={this.state.tiles}
           onTileClick={this.onTileClick}
         />   
+         
+        <Dialog
+          title="Felicidades!"
+          actions={actions}
+          modal={false}
+          open={this.state.dialogOpen}
+          onRequestClose={this.handleDialogClose}
+        >
+          Has resuelto el Puzzle en{' '}
+          {this.state.moves}
+          {' '}movimientos y{' '}
+          {this.state.seconds}
+          {' '}segundos!
+        </Dialog>
+
+        <Snackbar
+          open={this.state.snackbarOpen}
+          message={this.state.snackbarText}
+          onRequestClose={this.handleSnackbarClose}
+        />    
       </div>
     );
   }

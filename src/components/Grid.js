@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Tile, { propTypes as TilePropTypes } from './Tile';
 
 class Grid extends Component {
+  
   render() {
     const {
       className,
@@ -23,12 +24,14 @@ class Grid extends Component {
                 correct={tile.tileId + 1 === tile.number}
                 onClick={onTileClick}
                 visible={tile.number < gridSize ** 2}
-              />
-            );
+              />                        
+            ); 
           })}
         </div>
+        
       </div>
-    );
+    );  
+     
   }
 }
 

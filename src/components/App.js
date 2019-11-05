@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import levelFactory from './../lib/levels-factory';
 import Game from './Game';
+import Footer from './Footer';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -17,13 +18,28 @@ class App extends Component {
     };
   }
 
- 
+  onResetClick = () => {
+    this.setState({
+      level: {
+        tileSet: this.state.original.tileSet,
+      },
+    });
+  };
+
+  onNewClick = () => {
+    const newLevel = levelFactory(3 ** 2);
+    const newOriginalLevel = Object.assign({}, newLevel);
+    this.setState({
+      level: newLevel,
+      original: newOriginalLevel,
+    });
+  };
 
   render() {
     const { className } = this.props;
-    return (      
-      <div className={className}>    
-      <h1>Primer Prototipo</h1>    
+
+    return (
+      <div className={className}>
         <Game
           gridSize={3}
           tileSize={90}
@@ -32,6 +48,7 @@ class App extends Component {
           onNewClick={this.onNewClick}
           original={this.state.original.tileSet}
         />
+        <Footer />
       </div>
     );
   }
